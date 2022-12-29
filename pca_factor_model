@@ -1,9 +1,3 @@
-"""
-Homework 2
-Name: Cornelius Gilbert
-SID: 1155147665
-"""
-
 import pandas as pd
 import numpy as np
 from scipy.stats import pearsonr
