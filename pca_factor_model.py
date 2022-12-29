@@ -4,7 +4,6 @@ from scipy.stats import pearsonr
 from sklearn.preprocessing import StandardScaler
 import statsmodels.api as sm
 
-#Question 1
 main_folder = "C:\\Users\\ASUS\\OneDrive - The Chinese University of Hong Kong\\CUHK\\Term 5 (Fall 2022)\\FINA4380\\Homework\\HW2\\hw2.xlsx"
 
 df_equity = pd.read_excel(main_folder, sheet_name ="equity", index_col=0)
@@ -15,12 +14,10 @@ df_factor = pd.read_excel(main_folder, sheet_name ="factor", index_col=0)
 factor = df_factor.to_numpy()
 factor = np.diff(factor, axis=0)/factor[:-1,:]
 
-#Question 2
 reqExp = 0.8
 reqCorr = 0.4
 reqFCorr = 0.7
 
-#Question 3
 cov_factor = np.cov(factor, rowvar = False)
 
 eig_value, eig_vector = np.linalg.eig(cov_factor)
@@ -37,7 +34,6 @@ for i in range (len(eig_value)):
 
 pc = np.matmul(factor, eig_vector[:,:number_pcs])
 
-#Question 4
 all_factor = list(range(factor.shape[1]))
 important_factor = []
 
@@ -56,14 +52,12 @@ for i in range (number_pcs):
 
 important_factor_label = list(df_factor.columns[important_factor])
 
-#Question 5
 scaler = StandardScaler()
 equity_scaled = scaler.fit_transform(equity)
 
 scaler2 = StandardScaler()
 factor_scaled = scaler2.fit_transform(factor[:,important_factor])
 
-#Question 6
 beta=[]
 t_val=[]
 rsq=[]
