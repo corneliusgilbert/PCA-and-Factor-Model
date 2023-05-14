@@ -1,2 +1,3 @@
 # PCA-and-Factor-Model
-The assignment requirement can be found in HW2.pdf and the dataset can be found in HW2.xlsx
+1. The assignment requirement can be found in HW2.pdf 
+2. The dataset can be found in HW2.xlsx
